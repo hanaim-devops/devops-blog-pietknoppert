@@ -16,3 +16,21 @@ Met dank aan alle studenten!
     <img src="plaatjes/all-buzz.jpg" alt="Is it all just buzzwords?" width="500">
     <figcaption>Figuur 1: Een dag niet gememe'd, is een dag niet geleefd :)</figcaption>
 </figure>
+
+
+
+
+# Blog ding
+
+## voor mijzelf; 
+- wat is het
+- waarom is het belangrijk
+- hoe werkt het 
+- hoe kan ik het gebruiken > applicatie
+- wat zijn de voordelen
+- wat zijn de nadelen
+- wat zijn de alternatieven
+- wat zijn de use-cases
+- wat zijn de best practices
+- wat zijn de uitdagingen
+- devops aspecten > die focus group results opschrijven
