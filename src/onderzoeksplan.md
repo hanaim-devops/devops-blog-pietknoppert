@@ -3,22 +3,21 @@
 Hoe kan Thanos effectief worden ingezet in een devops omgeving voor monitoring en alerting?
 
 ## Deelvragen
-- Wat is de architectuur en de belangrijkste componenten van Thanos?
+1. Wat is de architectuur en de belangrijkste componenten van Thanos?
     - Hoe werkt Thanos samen met Prometheus?
     -  Welke problemen lost Thanos op ten opzichte van standaard Prometheus-implementaties?
     - Onderzoeksmethode: Literature study 
       - Toelichting: Bestudeer de officiële Thanos-documentatie, whitepapers, en technische blogs om een diepgaand begrip te krijgen van de architectuur en componenten. Analyseer schema's, architectuurdiagrammen en functionele beschrijvingen.
-- Hoe integreert Thanos met container-orkestratiesystemen zoals Kubernetes?
+2. Hoe integreert Thanos met container-orkestratiesystemen zoals Kubernetes?
     - Wat zijn de stappen voor het implementeren van Thanos in een Kubernetes-cluster?
-    - Welke configuraties zijn nodig voor een optimale integratie?
-    - Onderzoeksmethode: Practical Research and Technical Implementation
+    - Onderzoeksmethode: Prototyping
       - Toelichting: Voer een hands-on implementatie uit van Thanos binnen een Kubernetes-cluster om de integratiestappen en uitdagingen te begrijpen.
-- Wat zijn de voordelen en nadelen van het gebruik van Thanos in vergelijking met andere monitoringoplossingen?
+3. Wat zijn de voordelen en nadelen van het gebruik van Thanos in vergelijking met andere monitoringoplossingen?
     - Hoe verhoudt Thanos zich tot alternatieven zoals Cortex of M3DB?
     - Welke use-cases zijn het meest geschikt voor Thanos?
-    - Onderzoeksmethode: SWOT analysis of  Available Product Analysis of juist!;;Community Research ! 
+    - Onderzoeksmethode: Community Research
       - Toelichting: Analyseer en vergelijk Thanos met alternatieven zoals Cortex en M3DB op basis van criteria zoals schaalbaarheid, complexiteit en functionaliteit.
-- Op welke manieren kan Thanos bijdragen aan betere samenwerking tussen development en operations teams?
+4. Op welke manieren kan Thanos bijdragen aan betere samenwerking tussen development en operations teams?
     - Hoe faciliteert Thanos gedeelde inzichten in systeemprestaties?
     - Misschien: Onderzoeksmethode: Focus group
       - Toelichting: Organiseer een focusgroep met DevOps-teamleden om kwalitatieve inzichten te verzamelen over hoe Thanos de samenwerking en communicatie tussen teams beïnvloedt.
@@ -32,7 +31,7 @@ Hoe kan Thanos effectief worden ingezet in een devops omgeving voor monitoring e
 - aim controle kaart
 - https://ictresearchmethods.nl/
 - chatgpt
-- extra bron per deelvraag??? https://minordevops.nl/week-5-slack-ops/workshop-onderzoeksplan-prompt-engineering.html#c-vastleggen-format-checks
+- extra bron per deelvraag??? vgm werdt daarmee link naar iedere ict method per deelvraag https://minordevops.nl/week-5-slack-ops/workshop-onderzoeksplan-prompt-engineering.html#c-vastleggen-format-checks
 
 ### misschien of backup:
 - Hoe draagt Thanos bij aan de betrouwbaarheid en schaalbaarheid van monitoringdata in een DevOps-context?
