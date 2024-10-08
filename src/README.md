@@ -1,4 +1,4 @@
-# Thanos snapt je devops togheter
+# Thanos snapt je devops together
 'Conclusie/ samenvatting' 
 
 <img src="https://miro.medium.com/v2/resize:fit:1100/format:webp/0*pxjok2ACCc7PJOCM.jpg">
@@ -78,9 +78,10 @@ spec:
 ## Architectuur
 
 Nu ik heb verteld over de belangrijkste onderdelen ga ik de volledige architectuur in beeld brengen. Dit zit er zo uit:
-https://docs.google.com/drawings/d/e/2PACX-1vSJd32gPh8-MC5Ko0-P-v1KQ0Xnxa0qmsVXowtkwVGlczGfVW-Vd415Y6F129zvh3y0vHLBZcJeZEoz/pub?w=960&h=72
 
-<img src="https://docs.google.com/drawings/d/e/2PACX-1vSJd32gPh8-MC5Ko0-P-v1KQ0Xnxa0qmsVXowtkwVGlczGfVW-Vd415Y6F129zvh3y0vHLBZcJeZEoz/pub?w=960&h=72">
+<img src="https://docs.google.com/drawings/d/e/2PACX-1vSJd32gPh8-MC5Ko0-P-v1KQ0Xnxa0qmsVXowtkwVGlczGfVW-Vd415Y6F129zvh3y0vHLBZcJeZEoz/pub?w=960&h=720">
+
+SRC: https://docs.google.com/drawings/d/e/2PACX-1vSJd32gPh8-MC5Ko0-P-v1KQ0Xnxa0qmsVXowtkwVGlczGfVW-Vd415Y6F129zvh3y0vHLBZcJeZEoz/pub?w=960&h=72
 
 In deze afbeelding komen de eerder besproken componenten duidelijk naar voren, zoals de Sidecar, Store Gateway, Querier en de Compactor. Deze componenten werken samen om de schaalbaarheid, beschikbaarheid en persistentie van metrics binnen Thanos te optimaliseren. De afbeelding illustreert hoe data vanuit Prometheus naar de object storage stroomt en hoe Thanos componenten deze data kunnen verwerken en opvragen.
 
