@@ -87,6 +87,7 @@ services:
 
   test-api:
     image: jelmer0314/test-api:latest
+    container_name: test-api
     ports:
       - "5000:5000"
     networks:
