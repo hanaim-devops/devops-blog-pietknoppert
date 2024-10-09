@@ -1,0 +1,105 @@
+services:
+  prometheus:
+    image: prom/prometheus:v2.41.0
+    container_name: prometheus
+    volumes:
+      - prometheus-data:/prometheus
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+      - --storage.tsdb.path=/prometheus
+      - --web.enable-lifecycle
+      # Disable compaction by setting min and max block duration to the same value
+      - --storage.tsdb.min-block-duration=2h
+      - --storage.tsdb.max-block-duration=2h
+    ports:
+      - "9090:9090"
+    networks:
+      - monitoring
+    depends_on:
+      - test-api
+  
+  thanos-sidecar:
+    image: quay.io/thanos/thanos:v0.32.2
+    container_name: thanos-sidecar
+    user: "0"  # Run as root user to avoid permission issues
+    command:
+      - sidecar
+      - --prometheus.url=http://prometheus:9090
+      - --grpc-address=0.0.0.0:10901
+      - --http-address=0.0.0.0:10902
+      - --tsdb.path=/prometheus
+      - --objstore.config-file=/etc/thanos/objstore.yml
+    volumes:
+      - prometheus-data:/prometheus   # Shared volume with Prometheus
+      - ./thanos/objstore.yml:/etc/thanos/objstore.yml
+    networks:
+      - monitoring
+    depends_on:
+      - prometheus
+
+  thanos-store:
+    image: quay.io/thanos/thanos:v0.32.2
+    container_name: thanos-store
+    user: "0"  # Run as root user to avoid permission issues
+    command:
+      - store
+      - --grpc-address=0.0.0.0:10901
+      - --http-address=0.0.0.0:10902
+      - --data-dir=/data
+      - --objstore.config-file=/etc/thanos/objstore.yml
+    volumes:
+      - thanos-data:/data
+      - ./thanos/objstore.yml:/etc/thanos/objstore.yml
+    networks:
+      - monitoring
+
+  thanos-query:
+    image: quay.io/thanos/thanos:v0.32.2
+    container_name: thanos-query
+    command:
+      - query
+      - --http-address=0.0.0.0:9090
+      - --store=thanos-sidecar:10901
+      - --store=thanos-store:10901
+    ports:
+      - "19090:9090"
+    networks:
+      - monitoring
+    depends_on:
+      - thanos-sidecar
+      - thanos-store
+
+  grafana:
+    image: grafana/grafana:9.5.3
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana-storage:/var/lib/grafana
+      - ./grafana/provisioning/:/etc/grafana/provisioning/
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    networks:
+      - monitoring
+    depends_on:
+      - thanos-query
+
+  test-api:
+    image: jelmer0314/test-api:latest
+    ports:
+      - "5000:5000"
+    networks:
+      - monitoring
+
+volumes:
+  prometheus-data:
+    driver: local
+  thanos-data:
+    driver: local
+  grafana-storage:
+    driver: local
+
+networks:
+  monitoring:
+    driver: bridge
