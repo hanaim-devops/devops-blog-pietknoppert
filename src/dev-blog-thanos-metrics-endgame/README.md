@@ -1,13 +1,12 @@
 # De ultieme Endgame voor je metrics: Thanos
 
-<img src="https://thanos.io/Thanos-logo_full.svg" width="250" align="right" alt="Thanos logo" title="Thanos logo">
+<img src="plaatjes/thanos-logo.jpg" width="250" align="right" alt="Thanos logo" title="Thanos logo">
 
 *[Jelmer Noppert, oktober 2024.](https://github.com/hanaim-devops/devops-blog-pietknoppert)*
+
+Effectieve monitoring is essentieel in DevOps, maar Prometheus kent beperkingen op het gebied van schaalbaarheid en langdurige opslag. Thanos biedt de oplossing als de ultieme "Endgame" voor je metrics. In deze blog ontdek je hoe Thanos je monitoring kan versterken en je helpt om metrics op epische schaal te beheren.
+
 <hr/>
-
-<img src="https://miro.medium.com/v2/resize:fit:1100/format:webp/0*pxjok2ACCc7PJOCM.jpg" width="600" alt="Thanos">
-
-Afbeelding 1: Thanos (Stankowski, D. 2024, 30 juni-a)
 
 ## Wat is Thanos en hoe redt het je?
 
@@ -17,7 +16,7 @@ Weet je al wat Prometheus (Prometheus, z.d.) is? Om Thanos goed te kunnen begrij
 
 ### Thanos componenten
 
-Laten we eerst kijken uit welke onderdelen Thanos bestaat en hoe het interacteert met Prometheus
+Laten we eerst kijken uit welke onderdelen Thanos bestaat en hoe het interacteert met Prometheus.
 
 #### Sidecar
 
@@ -44,7 +43,7 @@ De Querier fungeert als een federated query-engine (Whitley, 2022) die data verz
 
 <img src="https://thanos.io/tip/img/querier.svg" width="500" alt="Querier">
 
-Afbeelding 2: Thanos Querier flow overview (Thanos metrics. z.d.-c)
+Afbeelding 1: Thanos Querier flow overview (Thanos metrics. z.d.-c)
 
 ### Downsampling
 
@@ -66,9 +65,9 @@ Nu ik de belangrijkste onderdelen heb besproken, zal ik de volledige architectuu
 
 <img src="https://docs.google.com/drawings/d/e/2PACX-1vSJd32gPh8-MC5Ko0-P-v1KQ0Xnxa0qmsVXowtkwVGlczGfVW-Vd415Y6F129zvh3y0vHLBZcJeZEoz/pub?w=960&h=720" alt="Thanos architecture">
 
-Afbeelding 3: Thanos components overview met onderliggende interacties (Thanos Metrics, z.d.-g)
+Afbeelding 2: Thanos components overview met onderliggende interacties (Thanos Metrics, z.d.-g)
 
-In afbeelding 3 komen de eerder besproken componenten duidelijk naar voren, zoals de Sidecar, Store Gateway, Querier en de Compactor. De afbeelding illustreert hoe data vanuit Prometheus naar de object storage stroomt en hoe Thanos componenten deze data kunnen verwerken en opvragen.
+In afbeelding 2 komen de eerder besproken componenten duidelijk naar voren, zoals de Sidecar, Store Gateway, Querier en de Compactor. De afbeelding illustreert hoe data vanuit Prometheus naar de object storage stroomt en hoe Thanos componenten deze data kunnen verwerken en opvragen.
 
 Een component die ik in deze blog niet heb behandeld is de Ruler. Dit component zorgt voornamelijk voor het evalueren van Prometheus alerting en recording rules (Prometheus, z.d.-c).
 
@@ -224,19 +223,19 @@ Grafana visualiseert deze metrics in dynamische dashboards, wat inzicht biedt in
 - **Test-api Metrics** (`http://localhost:5000/metrics`)
   - Hier kun je de ruwe metrics van de `test-api` bekijken die Prometheus verzamelt. Het toont statistieken zoals het totale aantal verzoeken en de status van elke respons, wat nuttig is voor het volgen van de prestatie van de API.
 
-Roep: [http://localhost:5000/api] (verschillende keren) aan via bijv. Postman of bezoek het adres in de browser.
+Roep: <http://localhost:5000/api> (verschillende keren) aan via bijv. Postman of bezoek het adres in de browser.
 
 Neem een kijkje bij de verschillende webapplicaties om te zien hoe het werkt. Bij Thanos kun je bijv. overzichtelijk zien hoe de sidecar is verbonden aan de test-api, ga naar: [http://localhost:19090/stores].
 
 Gebruik het commando `sum by (status) (request_count_total)` in Thanos (en/of Prometheus), om de resultaten van de test-api te zien. Dit ziet er bijvoorbeeld zo uit:
 ![img.png](plaatjes/result-thanos-query.png)
 
-Afbeelding 4: Thanos query resultaat
+Afbeelding 3: Thanos query resultaat
 
-Controleer of Prometheus dezelfde informatie laat zien. Als dat laatste ook is gelukt, neem dan een kijkje bij het dashboard van Grafana. Dit ziet er zo uit:
+Controleer of Prometheus dezelfde informatie laat zien. Als dat laatste ook is gelukt, neem dan een kijkje bij het dashboard van Grafana. Dit ziet er zo uit (zie afbeelding 4, Grafana visualisatie):
 ![img_1.png](plaatjes/result-grafana-test-api-dashboard.png)
 
-Afbeelding 5: Grafana visualisatie
+Afbeelding 4: Grafana visualisatie
 
 *Deze configuratie is een eenvoudige setup met beperkte schaalbaarheid; je ziet mogelijk niet meteen de volledige voordelen van Thanos.*
 
@@ -302,7 +301,7 @@ wegen de voordelen voor veel organisaties op tegen de nadelen.
 - Dbluxo. (2024). *GitHub - dbluxo/quickstart-thanos: A docker-compose stack for Thanos monitoring*. Geraadpleegd op 8 oktober 2024, van <https://github.com/dbluxo/quickstart-thanos>
 - Docker. (2024, 8 juli). *Docker: Accelerated Container Application Development*. <https://www.docker.com/>
 - Google Cloud. (z.d.). *What is Object Storage? Use cases & benefits*. Geraadpleegd op 8 oktober 2024, van <https://cloud.google.com/learn/what-is-object-storage?hl=en>
-- Fleury M. (2024 oktokber). *Houd grip op je applicatie: monitoren met Prometheus*. GitHub. Geraadpleegd op 9 oktober 2024, via <https://github.com/hanaim-devops/devops-blog-MitchelFleury/tree/main/src/prometheus-binnen-devops-omgeving>
+- Fleury M. (2024 oktokber). *Houd grip op je applicatie: monitoren met Prometheus*. GitHub. Geraadpleegd op 9 oktober 2024, van <https://github.com/hanaim-devops/devops-blog-MitchelFleury/tree/main/src/prometheus-binnen-devops-omgeving>
 - Last9. (z.d.). *Thanos vs Cortex*. <https://last9.io/blog/thanos-vs-cortex/>
 - OpenAI. (2024). *ChatGPT*. Geraadpleegd op 7 oktober 2024, van <https://openai.com/>
 - OpenTelemetry. (z.d.). *OpenTelemetry*. Geraadpleegd op 8 oktober 2024, van <https://opentelemetry.io/>
