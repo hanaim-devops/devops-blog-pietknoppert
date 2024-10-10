@@ -21,7 +21,13 @@ Laten we eerst kijken uit welke onderdelen Thanos bestaat en hoe het interacteer
 #### Sidecar
 
 Een van de belangrijkste componenten is de ‘sidecar’ (Thanos Metrics, z.d.-d).
-De sidecar fungeert als interface tussen Prometheus en Thanos, en uploadt block data naar een long-term storage (Oracle. z.d.), zoals een object store (data wordt opgeslagen als object, zie Google Cloud, z.d.).
+De sidecar fungeert als interface tussen Prometheus en Thanos, en uploadt block data naar een long-term storage (Oracle. z.d.).
+
+![thanos side car](plaatjes/thanos-sidecar.jpg)
+
+Afbeelding 1: Thanos sidecar naast Prometheus instantie (CNCF [Cloud Native Computing Foundation], 2020)
+
+Long-term storage kan is een object store (zie Google Cloud, z.d.).
 Dit kan bijvoorbeeld met Amazon S3 (Amazon S3 - Cloud Object Storage - AWS, z.d.).
 
 Iedere sidecar kan maar gekoppeld worden aan één Prometheus-server. Voor meerdere Prometheus instanties, heb je dus ook meerdere sidecars.
@@ -39,7 +45,7 @@ De Querier fungeert als een federated query-engine (Whitley, 2022) die data verz
 
 <img src="https://thanos.io/tip/img/querier.svg" width="500" alt="Querier">
 
-Afbeelding 1: Thanos Querier flow overview (Thanos metrics. z.d.-c)
+Afbeelding 2: Thanos Querier flow overview (Thanos metrics. z.d.-c)
 
 ### Downsampling
 
@@ -61,9 +67,9 @@ Nu ik de belangrijkste onderdelen heb besproken, zal ik de volledige architectuu
 
 <img src="https://docs.google.com/drawings/d/e/2PACX-1vSJd32gPh8-MC5Ko0-P-v1KQ0Xnxa0qmsVXowtkwVGlczGfVW-Vd415Y6F129zvh3y0vHLBZcJeZEoz/pub?w=960&h=720" alt="Thanos architecture">
 
-Afbeelding 2: Thanos components overview met onderliggende interacties (Thanos Metrics, z.d.-g)
+Afbeelding 3: Thanos components overview met onderliggende interacties (Thanos Metrics, z.d.-g)
 
-In afbeelding 2 komen de eerder besproken componenten duidelijk naar voren, zoals de Sidecar, Store Gateway, Querier en de Compactor. De afbeelding illustreert hoe data vanuit Prometheus naar de object storage stroomt en hoe Thanos componenten deze data kunnen verwerken en opvragen.
+In afbeelding 3 komen de eerder besproken componenten duidelijk naar voren, zoals de Sidecar, Store Gateway, Querier en de Compactor. De afbeelding illustreert hoe data vanuit Prometheus naar de object storage stroomt en hoe Thanos componenten deze data kunnen verwerken en opvragen.
 
 Een component die ik in deze blog niet heb behandeld is de Ruler. Dit component zorgt voornamelijk voor het evalueren van Prometheus alerting en recording rules (Prometheus, z.d.-c).
 
@@ -226,12 +232,12 @@ Neem een kijkje bij de verschillende webapplicaties om te zien hoe het werkt. Bi
 Gebruik het commando `sum by (status) (request_count_total)` in Thanos (en/of Prometheus), om de resultaten van de test-api te zien. Dit ziet er bijvoorbeeld zo uit:
 ![img.png](plaatjes/result-thanos-query.png)
 
-Afbeelding 3: Thanos query resultaat
+Afbeelding 4: Thanos query resultaat
 
-Controleer of Prometheus dezelfde informatie laat zien. Als dat laatste ook is gelukt, neem dan een kijkje bij het dashboard van Grafana. Dit ziet er zo uit (zie afbeelding 4, Grafana visualisatie):
+Controleer of Prometheus dezelfde informatie laat zien. Als dat laatste ook is gelukt, neem dan een kijkje bij het dashboard van Grafana. Dit ziet er zo uit (zie afbeelding 5, Grafana visualisatie):
 ![img_1.png](plaatjes/result-grafana-test-api-dashboard.png)
 
-Afbeelding 4: Grafana visualisatie
+Afbeelding 5: Grafana visualisatie
 
 *Deze configuratie is een eenvoudige setup met beperkte schaalbaarheid; je ziet mogelijk niet meteen de volledige voordelen van Thanos.*
 
@@ -294,6 +300,7 @@ wegen de voordelen voor veel organisaties op tegen de nadelen.
 - Amazon Web Services, Inc. (z.d.). *Amazon S3 - Cloud Object Storage - AWS*. <https://aws.amazon.com/s3/>
 - Blackwood-Sewell, J. (2024, 12 september). *Prometheus vs. OpenTelemetry Metrics: A Complete Guide*. Timescale Blog. <https://www.timescale.com/blog/prometheus-vs-opentelemetry-metrics-a-complete-guide/>
 - Blogger, M. (2023, 3 juli). *HA Kubernetes Monitoring using Prometheus and Thanos*. MetricFire. <https://www.metricfire.com/blog/ha-kubernetes-monitoring-using-prometheus-and-thanos/>
+- CNCF [Cloud Native Computing Foundation]. (2020, 4 september). *Thanos: Cheap, Simple and Scalable Prometheus - Giedrius Statkevičius & Matthias Loibl*. YouTube. https://www.youtube.com/watch?v=Wroo1n5GWwg
 - Dbluxo. (2024). *GitHub - dbluxo/quickstart-thanos: A docker-compose stack for Thanos monitoring*. Geraadpleegd op 8 oktober 2024, van <https://github.com/dbluxo/quickstart-thanos>
 - Docker. (2024, 8 juli). *Docker: Accelerated Container Application Development*. <https://www.docker.com/>
 - Google Cloud. (z.d.). *What is Object Storage? Use cases & benefits*. Geraadpleegd op 8 oktober 2024, van <https://cloud.google.com/learn/what-is-object-storage?hl=en>
