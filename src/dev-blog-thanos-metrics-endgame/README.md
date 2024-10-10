@@ -1,6 +1,6 @@
 # De ultieme Endgame voor je metrics: Thanos
 
-<img src="plaatjes/Thanos-logo_full.svg" width="250" align="right" alt="Thanos logo" title="Thanos logo">
+<img src="https://thanos.io/Thanos-logo_full.svg" width="250" align="right" alt="Thanos logo" title="Thanos logo">
 
 Afbeelding 1: (Thanos metrics. z.d.-f)
 
