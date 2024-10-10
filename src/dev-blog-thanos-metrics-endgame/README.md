@@ -31,10 +31,6 @@ Iedere sidecar kan maar gekoppeld worden aan één Prometheus-server. Voor meerd
 De Store Gateway haalt historische data uit de object storage, waar de Sidecar deze data heeft opgeslagen.
 Hierdoor is de retentieperiode (de tijdsduur waarvoor data wordt bewaard voordat deze wordt verwijderd of overschreven) van Prometheus korter door alleen recente data lokaal op te slaan terwijl oudere data in de object storage blijft.
 
-``` yaml
-thanos store \ --data-dir /var/thanos/store \ # Schijfruimte voor lokale caches --objstore.config-file bucket_config.yaml \ # Bucket om data uit op te halen --http-address 0.0.0.0:19191 \ # HTTP endpoint voor het verzamelen van metrics over de Store Gateway --grpc-address 0.0.0.0:19090 # GRPC endpoint voor StoreAPI
-```
-
 #### Querier
 
 Als je een of meerdere sidecars hebt opgezet bij verschillende Prometheus-instanties, kun je door middel van de Thanos Querier queries over alle instanties heen uitvoeren.
