@@ -27,24 +27,11 @@ Hoe kan Thanos effectief worden ingezet in een devops omgeving voor monitoring e
       - Toelichting: Organiseer een focusgroep met DevOps-teamleden om kwalitatieve inzichten te verzamelen over hoe Thanos de samenwerking en communicatie tussen teams beïnvloedt.
 
 
-## Bronnen: > later nog ff netjes
-- Thanos Documentation: https://thanos.io/
-- Prometheus Documentation: https://prometheus.io/docs/introduction/overview/
-- Cortex Documentation: https://cortexmetrics.io/
-- M3DB Documentation: https://m3db.io/
-- aim controle kaart
-- https://ictresearchmethods.nl/
-- chatgpt
-- extra bron per deelvraag??? vgm werdt daarmee link naar iedere ict method per deelvraag https://minordevops.nl/week-5-slack-ops/workshop-onderzoeksplan-prompt-engineering.html#c-vastleggen-format-checks
-
-### misschien of backup:
-- Hoe draagt Thanos bij aan de betrouwbaarheid en schaalbaarheid van monitoringdata in een DevOps-context?
-  - Hoe ondersteunt Thanos long-term storage en global querying? 
-  - Op welke manier verbetert Thanos de fouttolerantie van monitoringdiensten?
-- Welke best practices en uitdagingen zijn er bij het implementeren van Thanos? 
-  - Wat zijn de veelvoorkomende valkuilen tijdens de implementatie? 
-  - Hoe kunnen deze uitdagingen worden overwonnen?
-- Welke security-overwegingen moeten in acht worden genomen bij het gebruik van Thanos in een DevOps-omgeving? 
-  - Hoe kan men zorgen voor veilige gegevensoverdracht en opslag binnen Thanos? 
-- Hoe kan Thanos helpen bij het proactief identificeren en oplossen van performance issues in applicaties? 
-  - Welke monitoring metrics zijn cruciaal en hoe visualiseert Thanos deze?
+## Bronnen
+- Prometheus. (z.d.). *Prometheus - Monitoring system & time series database*. Geraadpleegd op 7 oktober 2024, van https://prometheus.io/
+- Thanos metrics. (z.d.). *Thanos*. Geraadpleegd op 7 oktober 2024, van https://thanos.io/
+- Cortex. (z.d.). *Cortex Documentation*. Geraadpleegd op 7 oktober 2024], van https://cortexmetrics.io/
+- M3DB. (z.d.). *M3DB Documentation*. Geraadpleegd op7 oktober 2024, van https://m3db.io/
+- Han Onderwijsonline. (z.d.). *AIM controle kaart*. Geraadpleegd op 7 oktober 2024, van https://han.onderwijsonline.nl/elearning/content/oNkklGNj
+- ICT Research Methods. (z.d.). Geraadpleegd op 7 oktober 2024, van https://ictresearchmethods.nl/
+- OpenAI. (2024). *ChatGPT*. Geraadpleegd op 7 oktober 2024, van https://openai.com/
