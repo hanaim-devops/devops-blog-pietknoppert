@@ -1,6 +1,6 @@
 # De ultieme Endgame voor je metrics: Thanos
 
-<img src="plaatjes/thanos-logo.jpg" width="250" align="right" alt="Thanos logo" title="Thanos logo">
+<img src="./plaatjes/thanos-logo.jpg" width="250" align="right" alt="Thanos logo">
 
 *[Jelmer Noppert, oktober 2024.](https://github.com/hanaim-devops/devops-blog-pietknoppert)*
 
