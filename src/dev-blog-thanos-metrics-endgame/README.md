@@ -25,7 +25,7 @@ De sidecar fungeert als interface tussen Prometheus en Thanos, en uploadt block 
 
 ![thanos side car](plaatjes/thanos-sidecar.jpg)
 
-Afbeelding 1: Thanos sidecar naast Prometheus instantie (CNCF [Cloud Native Computing Foundation], 2020)
+Afbeelding 1: Thanos sidecar naast Prometheus instantie (CNCF, 2020)
 
 Long-term storage kan is een object store (zie Google Cloud, z.d.).
 Dit kan bijvoorbeeld met Amazon S3 (Amazon S3 - Cloud Object Storage - AWS, z.d.).
@@ -300,7 +300,7 @@ wegen de voordelen voor veel organisaties op tegen de nadelen.
 - Amazon Web Services, Inc. (z.d.). *Amazon S3 - Cloud Object Storage - AWS*. <https://aws.amazon.com/s3/>
 - Blackwood-Sewell, J. (2024, 12 september). *Prometheus vs. OpenTelemetry Metrics: A Complete Guide*. Timescale Blog. <https://www.timescale.com/blog/prometheus-vs-opentelemetry-metrics-a-complete-guide/>
 - Blogger, M. (2023, 3 juli). *HA Kubernetes Monitoring using Prometheus and Thanos*. MetricFire. <https://www.metricfire.com/blog/ha-kubernetes-monitoring-using-prometheus-and-thanos/>
-- CNCF [Cloud Native Computing Foundation]. (2020, 4 september). *Thanos: Cheap, Simple and Scalable Prometheus - Giedrius Statkevičius & Matthias Loibl*. YouTube. https://www.youtube.com/watch?v=Wroo1n5GWwg
+- CNCF. (2020, 4 september). *Thanos: Cheap, Simple and Scalable Prometheus - Giedrius Statkevičius & Matthias Loibl*. YouTube. https://www.youtube.com/watch?v=Wroo1n5GWwg
 - Dbluxo. (2024). *GitHub - dbluxo/quickstart-thanos: A docker-compose stack for Thanos monitoring*. Geraadpleegd op 8 oktober 2024, van <https://github.com/dbluxo/quickstart-thanos>
 - Docker. (2024, 8 juli). *Docker: Accelerated Container Application Development*. <https://www.docker.com/>
 - Google Cloud. (z.d.). *What is Object Storage? Use cases & benefits*. Geraadpleegd op 8 oktober 2024, van <https://cloud.google.com/learn/what-is-object-storage?hl=en>
